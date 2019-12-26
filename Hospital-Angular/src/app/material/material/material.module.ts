@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, 
   MatIconModule, MatListModule, MatGridListModule, MatInputModule,
-  MatFormFieldModule, MatRadioModule, MatSelectModule, MatDatepickerModule, MatCheckboxModule, MatNativeDateModule, MatSnackBarModule, MatTableModule, MatPaginatorModule, MatSortModule, MatDialogModule } from '@angular/material';
+  MatFormFieldModule, MatRadioModule, MatSelectModule, MatDatepickerModule, 
+  MatCheckboxModule, MatNativeDateModule, MatSnackBarModule, MatTableModule, 
+  MatPaginatorModule, MatSortModule, MatDialogModule} from '@angular/material';
 
 const MaterialComponent = [
   MatToolbarModule,
@@ -23,7 +25,8 @@ const MaterialComponent = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSidenavModule
 ]
 
 
