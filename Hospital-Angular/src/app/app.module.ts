@@ -4,15 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PatientsComponent } from './patients/patients.component';
-import { PatientComponent } from './patients/patient/patient.component';
-import { MaterialModule } from './material/material.module';
+import { MaterialModule } from './material/material/material.module';
+import { DefaultComponent } from './layout/default/default.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PatientsComponent,
-    PatientComponent
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
