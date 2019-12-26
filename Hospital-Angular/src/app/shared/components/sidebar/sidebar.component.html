@@ -1,1 +1,29 @@
-<p>sidebar works!</p>
+
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h5>Bhagwan Bankar</h5>
+            <h6>bankarbhagwan@gmail.com</h6>
+        </div>
+        <img src="assets/img/profile_img.jpeg" alt="">
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Pages</h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>    
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/patient">Patient</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/doctor">Doctor</a>
+   
+    <mat-divider></mat-divider>
+    
+    <h2 matSubheader>Tools</h2>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>import_contacts</mat-icon> Contacts
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>contact_phone</mat-icon> Leads
+    </a>
+</mat-nav-list>
