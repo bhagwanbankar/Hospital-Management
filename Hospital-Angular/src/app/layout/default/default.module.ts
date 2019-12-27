@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 import { PatientComponent } from 'src/app/modules/patient/patient.component';
 import { DoctorComponent } from 'src/app/modules/doctor/doctor.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PatientService } from 'src/app/modules/patient/shared/patient.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterPatientComponent } from 'src/app/modules/patient/register-patient/register-patient.component';
 
 
 
@@ -15,13 +18,18 @@ import { SharedModule } from 'src/app/shared/shared.module';
     DefaultComponent,
     DashboardComponent,
     PatientComponent,
-    DoctorComponent
+    DoctorComponent,
+    RegisterPatientComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    PatientService
   ]
 })
 export class DefaultModule { }

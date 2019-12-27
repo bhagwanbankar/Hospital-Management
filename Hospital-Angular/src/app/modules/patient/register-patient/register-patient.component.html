@@ -1,0 +1,56 @@
+<form [formGroup]="service.form">
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile>
+            <div>
+                <input type="hidden" name="$key">
+                <mat-form-field>
+                    <input formControlName="firstName" matInput placeholder="First Name">
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="lastName" matInput placeholder="Last Name">
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <input formControlName="email" matInput placeholder="Email">
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="mobileNo" matInput placeholder="Mobile Number">
+                </mat-form-field>
+                
+            </div>    
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div>
+                <mat-form-field>
+                    <input formControlName="dob" matInput [matDatepicker]="dobpicker" placeholder="Date of Birth">
+                    <mat-datepicker-toggle matSuffix [for]="dobpicker"></mat-datepicker-toggle>
+                    <mat-datepicker #dobpicker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="registrationDate" matInput [matDatepicker]="picker" placeholder="Registration Date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                
+                <mat-radio-group aria-label="Select Gender" formControlName="gender">
+                    <mat-radio-button value="1">Male</mat-radio-button>
+                    <mat-radio-button value="2">Female</mat-radio-button>
+                    <mat-radio-button value="3">Other</mat-radio-button>
+                </mat-radio-group>
+                
+                
+                <mat-form-field >
+                    <mat-label>Marital Status</mat-label>
+                    <select matNativeControl formControlName="maritalStatus" required>
+                        <option value="1">Married</option>
+                        <option value="2">UnMarried</option>
+                    </select>
+                </mat-form-field>
+                      
+            </div>
+        </mat-grid-tile>
+        
+    </mat-grid-list>
+      
+
+</form> 
