@@ -25,6 +25,8 @@ export class PatientComponent implements OnInit {
     );
   }
 
+  
+
 }
 
 export class Patient{

@@ -8,19 +8,25 @@ import { PatientService } from '../shared/patient.service';
 })
 export class RegisterPatientComponent implements OnInit {
 
-  constructor(private service : PatientService) { }
+  constructor(private patientDataService : PatientService) { }
 
   ngOnInit() {
+    
   }
 
   onClear(){
-    this.service.form.reset();
-    this.service.initializeFormGroup();
+    this.patientDataService.form.reset();
+    this.patientDataService.initializeFormGroup();
   }
 
   onSubmit(){
-    if(this.service.form.valid){
-      this.service.insertPatient(this.service.form.value);
+    if(this.patientDataService.form.valid){
+      this.patientDataService.savePatient(this.patientDataService.form.value).subscribe(
+        data => {
+          console.log(data)
+            
+        }
+      );
       this.onClear();
     }
   }

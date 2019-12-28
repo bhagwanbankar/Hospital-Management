@@ -1,4 +1,4 @@
-<form [formGroup]="service.form" (submit)="onSubmit()">
+<form [formGroup]="patientDataService.form" (submit)="onSubmit()">
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
         <div fxFlex="50">
             <div class="controles-container">
@@ -44,8 +44,9 @@
                 <mat-form-field >
                     <mat-label>Marital Status</mat-label>
                     <select matNativeControl formControlName="maritalStatus" required>
-                        <option value="1">Married</option>
-                        <option value="2">UnMarried</option>
+                        <option value="">Select Status</option>
+                        <option value="Married">Married</option>
+                        <option value="UnMarried">UnMarried</option>
                     </select>
                 </mat-form-field>
                 
@@ -56,7 +57,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
         <div fxFlex="100">
             <div class="button-row">
-                <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="patientDataService.form.invalid">Submit</button>
                 <button mat-raised-button color="warn" type="reset" (click)="onClear()">Clear</button>
             </div>
         </div>

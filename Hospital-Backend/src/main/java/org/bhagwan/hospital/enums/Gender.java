@@ -1,7 +1,12 @@
 package org.bhagwan.hospital.enums;
 
-public enum Gender {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public enum Gender {
+	@JsonProperty("1")
 	Male,
-	Female
+	@JsonProperty("2")
+	Female,
+	@JsonProperty("3")
+	Other
 }

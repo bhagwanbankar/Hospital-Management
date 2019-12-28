@@ -7,9 +7,9 @@ import { Patient } from '../patient.component';
   providedIn: 'root'
 })
 export class PatientService {
-  insertPatient(value: any) {
-    throw new Error("Method not implemented.");
-  }
+  
+  
+
   initializeFormGroup() {
     this.form.setValue({
       $key: null,
@@ -46,6 +46,10 @@ export class PatientService {
 
     return this.http.get<Patient[]>(`http://localhost:8080/hospital/patients`);
 
+  }
+
+  savePatient(patient: any) {
+    return this.http.post(`http://localhost:8080/hospital/patients`,patient);
   }
 
 }
