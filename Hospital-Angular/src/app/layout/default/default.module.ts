@@ -10,6 +10,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { PatientService } from 'src/app/modules/patient/shared/patient.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterPatientComponent } from 'src/app/modules/patient/register-patient/register-patient.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -26,7 +28,9 @@ import { RegisterPatientComponent } from 'src/app/modules/patient/register-patie
     MaterialModule,
     RouterModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [
     PatientService

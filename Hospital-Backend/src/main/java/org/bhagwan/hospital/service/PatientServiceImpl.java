@@ -3,7 +3,6 @@ package org.bhagwan.hospital.service;
 import java.util.Date;
 import java.util.List;
 
-import org.bhagwan.hospital.entity.Address;
 import org.bhagwan.hospital.entity.Patient;
 import org.bhagwan.hospital.enums.Gender;
 import org.bhagwan.hospital.enums.MaritalStatus;
@@ -30,8 +29,8 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public Patient findById(Long id) {
-		Address address = new Address(new Long(1), "line1", "line2", "city", "district", "state","pincode");
-		Patient p = new Patient(id, "firstName", "lastName", address, new Date(), new Date(), "email", new Long("9988112233"), Gender.Male, MaritalStatus.Married);
+		//Address address = new Address(new Long(1), "line1", "line2", "city", "district", "state","pincode");
+		Patient p = new Patient(id, "firstName", "lastName",new Date(), new Date(), "email", new Long("9988112233"), Gender.Male, MaritalStatus.Married);
 		//return patientRepository.findById(id).get();
 		return p;
 	}

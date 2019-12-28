@@ -25,9 +25,9 @@ public class Patient {
 	private String firstName;
 	private String lastName;
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-	@JoinColumn(name="ADDRESS_ID")	
-	private Address address;
+//	@OneToOne(cascade = {CascadeType.ALL})
+//	@JoinColumn(name="ADDRESS_ID")	
+//	private Address address;
 	
 	private Date dob;
 	private Date registrationDate;
@@ -40,13 +40,13 @@ public class Patient {
 	public Patient() {
 	}
 	
-	public Patient(Long id, String firstName, String lastName, Address address, Date dob, Date registrationDate,
+	public Patient(Long id, String firstName, String lastName, Date dob, Date registrationDate,
 			String email, long mobileNo, Gender gender, MaritalStatus maritalStatus) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.address = address;
+		//this.address = address;
 		this.dob = dob;
 		this.registrationDate = registrationDate;
 		this.email = email;
@@ -79,14 +79,11 @@ public class Patient {
 		this.lastName = lastName;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
+	/*
+	 * public Address getAddress() { return address; }
+	 * 
+	 * public void setAddress(Address address) { this.address = address; }
+	 */
 	public Date getDob() {
 		return dob;
 	}
@@ -137,7 +134,7 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address=" + address
+		return "Patient [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName 
 				+ ", dob=" + dob + ", registrationDate=" + registrationDate + ", email=" + email + ", mobileNo="
 				+ mobileNo + ", gender=" + gender + ", maritalStatus=" + maritalStatus + "]";
 	}

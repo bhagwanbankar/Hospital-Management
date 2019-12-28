@@ -13,4 +13,15 @@ export class RegisterPatientComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClear(){
+    this.service.form.reset();
+    this.service.initializeFormGroup();
+  }
+
+  onSubmit(){
+    if(this.service.form.valid){
+      this.service.insertPatient(this.service.form.value);
+      this.onClear();
+    }
+  }
 }
