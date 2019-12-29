@@ -2,6 +2,7 @@ package org.bhagwan.hospital.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import org.bhagwan.hospital.entity.Patient;
 import org.bhagwan.hospital.service.PatientService;
@@ -15,12 +16,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
-@RequestMapping(value = "hospital")
+//@RequestMapping(value = "hospital")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PatientController {
 
@@ -46,21 +46,24 @@ public class PatientController {
 	}
 	
 	@GetMapping(value="/patients/{id}")
-	public Patient getPatientById(@PathVariable Long id) {
-		return patientService.findById(id);
+	public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
+		Optional<Patient> findById = patientService.findById(id);
+		if(findById.isPresent())
+			new ResponseEntity<Patient>(findById.get(),HttpStatus.OK);
+		return ResponseEntity.notFound().build(); 
 	}
 	
 	@PutMapping(value="/patients/{id}")
 	public ResponseEntity<Patient> updatePatient(@RequestBody Patient newPatient, @PathVariable Long id) {
 		
 		patientService.update(newPatient);		
-		return new ResponseEntity<Patient>(newPatient,HttpStatus.OK);
+		return new ResponseEntity<>(newPatient,HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/patients/{id}")
 	public ResponseEntity<Void> deletePatient(@PathVariable Long id) {
 		
-		if(patientService.findById(id)==null)
+		if(!patientService.findById(id).isPresent())
 			return ResponseEntity.notFound().build();
 		
 		patientService.deleteById(id);	
