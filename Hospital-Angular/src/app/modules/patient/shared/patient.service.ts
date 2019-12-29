@@ -44,12 +44,12 @@ export class PatientService {
 
   retrieveAllPatient() {
 
-    return this.http.get<Patient[]>(`http://localhost:8080/hospital/patients`);
+    return this.http.get<Patient[]>(`http://localhost:8080/patients`);
 
   }
 
   savePatient(patient: any) {
-    return this.http.post(`http://localhost:8080/hospital/patients`,patient);
+    return this.http.post(`http://localhost:8080/patients`,patient);
   }
 
 }

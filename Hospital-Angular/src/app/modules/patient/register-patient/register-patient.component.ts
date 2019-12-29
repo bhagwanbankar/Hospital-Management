@@ -15,6 +15,7 @@ export class RegisterPatientComponent implements OnInit {
   }
 
   onClear(){
+    
     this.patientDataService.form.reset();
     this.patientDataService.initializeFormGroup();
   }

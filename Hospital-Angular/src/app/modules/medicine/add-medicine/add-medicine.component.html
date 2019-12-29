@@ -1,0 +1,52 @@
+<form [formGroup]="medicineDataService.form" (submit)="onSubmit()">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <div fxFlex="50">
+            <div class="controles-container">
+                <input type="hidden" name="$key">
+                <mat-form-field>
+                    <input formControlName="medicineName" matInput placeholder="Medicine Name" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="medicineType" matInput placeholder="Medicine Type">
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <input formControlName="company" matInput placeholder="Company">
+                    
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="timeInterval" matInput placeholder="Time Interval">
+                </mat-form-field>
+                
+            </div>    
+        </div>
+        <div fxFlex="50">
+            <div class="controles-container">
+                <mat-form-field>
+                    <input formControlName="amoutPerInterval" matInput placeholder="Amout Per Interval">
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="instruction" matInput placeholder="Instruction">
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <input formControlName="quantity" matInput placeholder="Quantity">
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="duration" matInput placeholder="Duration">
+                </mat-form-field>
+                
+            </div>   
+        </div>
+        
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <div fxFlex="100">
+            <div class="button-row">
+                <button mat-raised-button color="primary" type="submit" [disabled]="medicineDataService.form.invalid">Submit</button>
+                <button mat-raised-button color="warn" type="reset" (click)="onClear()">Clear</button>
+            </div>
+        </div>
+    </div> 
+
+</form> 
