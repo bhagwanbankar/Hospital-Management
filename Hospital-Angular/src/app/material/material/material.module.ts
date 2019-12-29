@@ -5,7 +5,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule,
   MatIconModule, MatListModule, MatGridListModule, MatInputModule,
   MatFormFieldModule, MatRadioModule, MatSelectModule, MatDatepickerModule, 
   MatCheckboxModule, MatNativeDateModule, MatSnackBarModule, MatTableModule, 
-  MatPaginatorModule, MatSortModule, MatDialogModule, MatMenuModule, MatCardModule} from '@angular/material';
+  MatPaginatorModule, MatSortModule, MatDialogModule, MatMenuModule, MatCardModule, MatExpansionModule} from '@angular/material';
 
 const MaterialComponent = [
   MatToolbarModule,
@@ -28,7 +28,8 @@ const MaterialComponent = [
   MatDialogModule,
   MatSidenavModule,
   MatMenuModule,
-  MatCardModule
+  MatCardModule,
+  MatExpansionModule
 ]
 
 

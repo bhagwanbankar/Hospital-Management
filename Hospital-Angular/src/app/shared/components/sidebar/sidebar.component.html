@@ -1,4 +1,5 @@
 
+
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
@@ -9,22 +10,43 @@
     </div>
 
     <mat-divider></mat-divider>
-
     <h2 matSubheader>Pages</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>    
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/patient">Patient</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/doctor">Doctor</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/medicine">Medicine</a>
-   
-    <mat-divider></mat-divider>
-    
-    <h2 matSubheader>Tools</h2>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>import_contacts</mat-icon> Contacts
-    </a>
-
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>contact_phone</mat-icon> Leads
-    </a>
-</mat-nav-list>
+    <span *ngFor="let item of menu">
+      <span *ngIf="item.children && item.children.length > 0">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <!-- Submenu headers -->
+                <mat-list-item [routerLink]="[item.route]">
+                    <div fxLayout="row" fxLayoutAlign="space-between center" > 
+                    <mat-icon>{{item.iconName}}</mat-icon>
+                    {{item.displayName}}
+                    </div>
+                </mat-list-item>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <span *ngFor="let child of item.children">
+              <mat-list-item [routerLink]="[child.route]">
+                <!-- entries of each submenu -->
+                <div fxLayout="row" fxLayoutAlign="space-between center" > 
+                  <mat-icon>{{child.iconName}}</mat-icon>
+                  {{child.displayName}}
+                </div>
+              </mat-list-item>
+            </span>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </span>
+      <span *ngIf="!item.children || item.children.length === 0">
+        <a mat-list-item [routerLink]="[item.route]" routerLinkActive="list-item-active">
+          <!-- Main entrances -->
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-icon>{{item.iconName}}</mat-icon>
+            {{item.displayName}}
+          </div>
+        </a>
+      </span>
+    </span>
+  </mat-nav-list>
