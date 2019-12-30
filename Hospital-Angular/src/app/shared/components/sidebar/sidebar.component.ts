@@ -32,7 +32,7 @@ export class SidebarComponent implements OnInit {
         {
           displayName: 'Examine patient',
           iconName: 'how_to_reg',
-          route: '/examinePatient'
+          route: '/examine-patient'
         },
         { 
           displayName: 'Todos',
